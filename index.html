@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilherme Gonçalves | Brand Strategist</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Outfit:wght@300;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050505',
+                        light: '#E0E0E0',
+                        accent: '#ffffff',
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'reveal': 'reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards',
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        reveal: {
+                            '0%': { transform: 'translateY(100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #E0E0E0;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* FILTRO DE LUXO PARA A FOTO DE PERFIL */
+        .luxury-filter {
+            filter: grayscale(100%) contrast(120%) brightness(90%);
+            mix-blend-mode: luminosity;
+            opacity: 0.9;
+            transition: all 0.7s ease;
+        }
+        .luxury-filter:hover {
+            filter: grayscale(0%) contrast(100%) brightness(100%);
+            opacity: 1;
+            mix-blend-mode: normal;
+        }
+
+        /* Animações de Texto */
+        .reveal-text {
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: bottom;
+        }
+        .reveal-text span {
+            display: inline-block;
+            animation: reveal 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+            opacity: 0;
+        }
+
+        /* Nav Glassmorphism */
+        .glass-nav {
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Cursor Personalizado */
+        .custom-cursor {
+            width: 20px; height: 20px;
+            background: #fff; border-radius: 50%;
+            position: fixed; pointer-events: none;
+            mix-blend-mode: difference; z-index: 9999;
+            transition: transform 0.2s ease;
+        }
+
+        /* Lightbox / Galeria */
+        .lightbox-backdrop {
+            background: rgba(5, 5, 5, 0.98);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="antialiased selection:bg-white selection:text-black">
+
+    <nav class="fixed top-0 w-full z-50 glass-nav px-6 py-6 flex justify-between items-center">
+        <div class="font-display font-semibold text-xl tracking-tighter uppercase">GG.</div>
+        <div class="hidden md:flex gap-8 text-xs font-light tracking-widest uppercase">
+            <a href="#work" class="hover:opacity-50 transition-opacity duration-300">Projetos</a>
+            <a href="#contact" class="hover:opacity-50 transition-opacity duration-300">Contato</a>
+        </div>
+        <div class="text-xs font-light tracking-widest uppercase border border-light/20 px-4 py-2 rounded-full text-white/80">
+            Agenda 2026: Aberta
+        </div>
+    </nav>
+
+    <main>
+        <section class="min-h-screen flex flex-col justify-end px-6 pb-20 pt-40 overflow-hidden relative bg-cover bg-center" style="background-image: url('./assets/img/hero-bg.jpg');">
+            
+            <div class="absolute inset-0 bg-[#050505] opacity-90 z-0"></div>
+
+            <div class="max-w-[1400px] mx-auto w-full relative z-10">
+                <div class="mb-12">
+                    <span class="text-xs font-light tracking-[0.4em] uppercase opacity-60 mb-8 block animate-fade-in">Brand Strategist & Creative Designer</span>
+                    <h1 class="font-display font-semibold text-[12vw] leading-[0.85] tracking-tighter text-white uppercase italic">
+                        <div class="reveal-text"><span>Design</span></div><br>
+                        <div class="reveal-text" style="animation-delay: 0.1s;"><span>Estratégico</span></div><br>
+                        <div class="reveal-text" style="animation-delay: 0.2s;"><span class="text-transparent" style="-webkit-text-stroke: 1px white;">& Marcas.</span></div>
+                    </h1>
+                </div>
+                
+                <div class="flex flex-col md:flex-row justify-between items-end gap-12 mt-20 border-t border-white/10 pt-12">
+                    <div class="flex flex-col md:flex-row gap-8 items-center md:items-center">
+                        <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-white/20 shrink-0">
+                            <img src="./assets/img/gui-profile.jpg" alt="Guilherme Gonçalves" class="luxury-filter w-full h-full object-cover">
+                        </div>
+                        
+                        <p class="max-w-md text-lg md:text-xl font-light leading-relaxed text-light/80 text-center md:text-left">
+                            Especialista em unir identidade visual e posicionamento estratégico para criar negócios memoráveis e de alto valor percebido.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col items-end">
+                        <div class="w-12 h-12 border border-light/20 rounded-full flex items-center justify-center animate-bounce text-white/50">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 13l5 5 5-5M7 6l5 5 5-5" /></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="py-32 px-6">
+            <div class="max-w-[1400px] mx-auto">
+                <div class="flex items-baseline justify-between mb-24 border-b border-white/10 pb-8">
+                    <h2 class="font-display text-5xl font-light tracking-tight italic">Projetos Selecionados</h2>
+                    <span class="font-body text-sm opacity-50 uppercase tracking-widest">01 — 03</span>
+                </div>
+
+                <div class="grid grid-cols-12 gap-y-32 md:gap-x-12">
+                    
+                    <div class="col-span-12 md:col-span-8 group cursor-pointer" onclick="openGallery('coxinhoca')">
+                        <div class="overflow-hidden aspect-video relative bg-zinc-900 rounded-sm">
+                            <img src="./assets/img/coxinhoca-hero.jpg" 
+                                 alt="Coxinhoca" 
+                                 class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-in-out scale-105 group-hover:scale-100">
+                            <div class="absolute top-6 right-6 mix-blend-difference">
+                                <span class="text-white text-xs tracking-widest uppercase">01 / Visual Identity</span>
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+                                <div class="bg-white/10 backdrop-blur-md px-6 py-2 rounded-full border border-white/20 text-xs uppercase tracking-widest">Ver Galeria</div>
+                            </div>
+                        </div>
+                        <div class="mt-8 flex flex-col md:flex-row md:items-start justify-between gap-6">
+                            <h3 class="font-display text-4xl font-semibold tracking-tighter uppercase">Coxinhoca</h3>
+                            <p class="max-w-md font-body text-light/60 font-light leading-relaxed">
+                                "Deliciosamente Irresistível". Uma identidade sensorial que une o artesanal ao pop, com paleta quente e patterns táteis.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-span-12 md:col-span-4 mt-0 md:mt-40 group cursor-pointer" onclick="openGallery('ciara')">
+                        <div class="overflow-hidden aspect-[4/5] relative bg-zinc-900 rounded-sm">
+                            <img src="./assets/img/ciara-hero.jpg" 
+                                 alt="Ciara Joias" 
+                                 class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-in-out scale-105 group-hover:scale-100">
+                            <div class="absolute top-6 right-6 mix-blend-difference">
+                                <span class="text-white text-xs tracking-widest uppercase">02 / Luxury Branding</span>
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+                                <div class="bg-white/10 backdrop-blur-md px-6 py-2 rounded-full border border-white/20 text-xs uppercase tracking-widest">Ver Galeria</div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h3 class="font-display text-3xl font-semibold tracking-tighter uppercase mb-4">Ciara Joias</h3>
+                            <p class="font-body text-light/60 font-light leading-relaxed text-sm">
+                                "Lapidação Geométrica". O contraste entre a solidez da geometria e a delicadeza da joalheria em tons Nude e Rose Gold.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-span-12 md:col-span-7 group cursor-pointer" onclick="openGallery('cabana')">
+                        <div class="overflow-hidden aspect-video relative bg-zinc-900 rounded-sm">
+                            <img src="./assets/img/cabana-hero.jpg" 
+                                 alt="Cabana nos Canyons" 
+                                 class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-in-out scale-105 group-hover:scale-100">
+                            <div class="absolute top-6 right-6 mix-blend-difference">
+                                <span class="text-white text-xs tracking-widest uppercase">03 / Place Branding</span>
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+                                <div class="bg-white/10 backdrop-blur-md px-6 py-2 rounded-full border border-white/20 text-xs uppercase tracking-widest">Ver Galeria</div>
+                            </div>
+                        </div>
+                        <div class="mt-8 flex flex-col md:flex-row md:items-start justify-between gap-6">
+                            <h3 class="font-display text-4xl font-semibold tracking-tighter uppercase">Cabana nos Canyons</h3>
+                            <p class="max-w-md font-body text-light/60 font-light leading-relaxed">
+                                "Refúgio Elemental". Um sistema visual vibrante inspirado nos 4 elementos (Terra, Fogo, Água, Ar) integrados à natureza.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-span-12 md:col-span-5 flex flex-col justify-center items-center p-12 bg-white/5 rounded-sm border border-white/5 hover:bg-white/10 transition-colors duration-500">
+                        <span class="font-display italic text-2xl mb-6">Próximo Projeto?</span>
+                        <a href="mailto:ola@guilherme.com" class="text-xs tracking-[0.3em] uppercase underline underline-offset-8 decoration-white/20 hover:decoration-white transition-all">Iniciar uma conversa</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-40 px-6 bg-white text-black">
+            <div class="max-w-[1400px] mx-auto text-center">
+                <h2 class="font-display font-semibold text-[10vw] leading-[0.9] tracking-tighter uppercase italic mb-12">
+                    Vamos elevar <br> sua marca?
+                </h2>
+                <div class="flex flex-col items-center gap-8">
+                    <a href="https://wa.me/5551984638156" class="text-3xl md:text-5xl font-display font-light tracking-tighter hover:opacity-50 transition-all duration-300">
+                        Iniciar Projeto
+                    </a>
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-12 mt-12 text-xs font-body font-light tracking-widest uppercase text-gray-500">
+                        <span>Santa Cruz do Sul, RS</span>
+                        <span>© 2026 Guilherme Gonçalves</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="lightbox" class="fixed inset-0 z-[100] lightbox-backdrop hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4 md:p-12">
+        <button onclick="closeGallery()" class="absolute top-8 right-8 text-white hover:text-gray-400 z-[101]">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <div id="gallery-container" class="w-full h-full flex items-center gap-8 overflow-x-auto no-scrollbar snap-x snap-mandatory px-4">
+            </div>
+    </div>
+
+    <div id="cursor" class="custom-cursor hidden md:block"></div>
+
+    <script>
+        // CONFIGURAÇÃO DAS IMAGENS (Seu Banco de Dados Local)
+        const projects = {
+            'coxinhoca': [
+                './assets/img/coxinhoca-hero.jpg', 
+                './assets/img/coxinhoca-detail1.jpg',
+                './assets/img/coxinhoca-detail2.jpg'
+            ],
+            'ciara': [
+                './assets/img/ciara-hero.jpg',
+                './assets/img/ciara-detail1.jpg',
+                './assets/img/ciara-detail2.jpg'
+            ],
+            'cabana': [
+                './assets/img/cabana-hero.jpg',
+                './assets/img/cabana-detail1.jpg',
+                './assets/img/cabana-detail2.jpg'
+            ]
+        };
+
+        // Lógica da Galeria
+        const lightbox = document.getElementById('lightbox');
+        const container = document.getElementById('gallery-container');
+
+        function openGallery(id) {
+            const images = projects[id];
+            if(!images) return;
+            
+            container.innerHTML = '';
+            images.forEach(src => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'snap-center shrink-0 min-w-[85vw] md:min-w-0 md:h-full flex items-center justify-center';
+                
+                const img = document.createElement('img');
+                img.src = src;
+                img.className = 'max-h-[80vh] w-auto object-contain shadow-2xl rounded-sm';
+                
+                wrapper.appendChild(img);
+                container.appendChild(wrapper);
+            });
+
+            lightbox.classList.remove('hidden');
+            setTimeout(() => lightbox.classList.remove('opacity-0'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery() {
+            lightbox.classList.add('opacity-0');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeGallery();
+        });
+
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        document.querySelectorAll('a, .group, button').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.style.transform = 'scale(4)');
+            el.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
+        });
+
+        // Smooth Scroll Reveal
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('translate-y-10');
+                    entry.target.style.transition = 'all 1s cubic-bezier(0.19, 1, 0.22, 1)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.group, h2').forEach(el => {
+            el.classList.add('opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
